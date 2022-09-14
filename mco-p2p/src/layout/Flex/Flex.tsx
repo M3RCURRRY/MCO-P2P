@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 type FlexProps = {
-  direction: string,
+  direction?: string,
+  align?: string,
+  justify?: string, 
+  children: React.ReactElement[];
 }
 
-const StyledFlex = styled.div<FlexProps>`
+const Flex = styled.div<FlexProps>`
 display: flex;
 flex-direction: ${props => props.direction || "row"};
+align-items: ${props => props.align || "flex-start"};
+jusitfy-content: ${props => props.justify || "flex-start"};
 `
-
-const Flex = (props: FlexProps) => {
-  return <StyledFlex {...props} />
-}
 
 export default Flex;
