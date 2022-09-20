@@ -1,15 +1,17 @@
 .routeList {
-  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
   height: 100px;
-  background-color: brown;
-  color: yellow;
 }
 
 .routeList.entering {
   animation: display-routes .5s forwards;
 }
 
-.routeList .entered {
+.routeList.entered {
 
 }
 
@@ -17,8 +19,8 @@
   animation: display-routes .5s reverse;
 }
 
-.routeList .exited {
-
+.routeList.exited {
+  
 }
 
 @keyframes display-routes {
@@ -31,5 +33,12 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .routeList {
+    align-items: center;
+    flex-direction: column;
   }
 }

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useMedia } from "../../hooks/useMedia";
 import Flex from "../Flex/Flex";
+import NavigationBar from "../NavigationBar/NavigationBar";
 import swords from "./../../resources/images/sword.png";
 import styles from "./Header.module.scss";
 
@@ -21,9 +22,7 @@ export default function Header() {
           </>
         </Flex>
       </header>
-      <nav className={styles.styledNavbar}>
-
-      </nav>
+      <NavigationBar/>
     </Flex>
   );
 }

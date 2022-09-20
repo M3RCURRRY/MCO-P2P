@@ -1,0 +1,30 @@
+.styledNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: 0px;
+  margin-bottom: 10px;
+
+  box-shadow: 0px 8px 14px 0px rgba(129, 129, 129, 0.5);
+}
+
+.navbarContainer {
+  width: 100%;
+
+  margin: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #fff;
+}
+
+.toggle {
+  border: none !important;
+}
+
+.navs {
+  width: 100%;
+  color: #fff;
+}
