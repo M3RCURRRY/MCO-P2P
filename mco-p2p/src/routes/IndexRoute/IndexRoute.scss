@@ -1,0 +1,35 @@
+.routeList {
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  color: yellow;
+}
+
+.routeList.entering {
+  animation: display-routes .5s forwards;
+}
+
+.routeList .entered {
+
+}
+
+.routeList.exiting {
+  animation: display-routes .5s reverse;
+}
+
+.routeList .exited {
+
+}
+
+@keyframes display-routes {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

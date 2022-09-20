@@ -1,39 +1,29 @@
 import styled from "styled-components";
+import { useMedia } from "../../hooks/useMedia";
 import Flex from "../Flex/Flex";
 import swords from "./../../resources/images/sword.png";
+import styles from "./Header.module.scss";
 
-const StyledHeader = styled.header`
-  width: 100%;
-  height: fit-content;
-
-  padding: 10px;
-
-  background-color: #4040a1;
-  color: #fff;
-`;
-
-const StyledNavBar = styled.nav`
-  width: 100%;
-  height: 50px;
-
-  padding: 10px;
-  margin-bottom: 10px;
-
-  background-color: #252559;
-  
-  box-shadow: 0px 8px 14px 0px rgba(129, 129, 129, 0.5);
-`;
+type MediaQueries = { [k: string] : boolean};
 
 export default function Header() {
+  const {isPortraitMobile, isLandscapeMobile, ...isOther}: MediaQueries = useMedia();
+  const isMobile = isPortraitMobile || isLandscapeMobile;
+
   return (
     <Flex direction="column">
-      <StyledHeader>
-        <Flex direction="column" align="center" justify="center">
+      <header className={styles.styledHeader}>
+        <Flex direction={isMobile ? "row" : "column" } align="center" justify="center">
           <img style={{ width: "64px" }} src={swords}></img>
-          <h2>RPG Utils</h2>
+          <h3>RPG Utils</h3>
+          <>  
+            {!isMobile && <h6>Simplest utility</h6>}
+          </>
         </Flex>
-      </StyledHeader>
-      <StyledNavBar></StyledNavBar>
+      </header>
+      <nav className={styles.styledNavbar}>
+
+      </nav>
     </Flex>
   );
 }

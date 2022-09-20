@@ -1,7 +1,22 @@
+import { Transition } from "react-transition-group";
+import { useState, useEffect } from "react";
+
+import "./IndexRoute.scss";
+
 export default function IndexRoute() {
-  return(
+  const [isVisible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setVisible(!isVisible);
+    }, 1000);
+  }, []);
+
+  return (
     <div>
-      123
+      <Transition in={isVisible} timeout={500} mountOnEnter unmountOnExit>
+        {(state) => <div className={`routeList ${state}`}>Index</div>}
+      </Transition>
     </div>
-  )
+  );
 }

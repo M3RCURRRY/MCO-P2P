@@ -4,7 +4,7 @@ type FlexProps = {
   direction?: string,
   align?: string,
   justify?: string, 
-  children: React.ReactElement[];
+  children: React.ReactElement[] | React.ReactElement;
 }
 
 const Flex = styled.div<FlexProps>`
