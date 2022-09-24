@@ -1,9 +1,10 @@
-import styled from "styled-components";
 import { useMedia } from "../../hooks/useMedia";
+
 import Flex from "../Flex/Flex";
 import NavigationBar from "../NavigationBar/NavigationBar";
-import swords from "./../../resources/images/sword.png";
 import styles from "./Header.module.scss";
+
+import swords from "./../../resources/images/sword.png";
 
 type MediaQueries = { [k: string] : boolean};
 
