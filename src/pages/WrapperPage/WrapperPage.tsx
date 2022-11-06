@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../../layout/Header/Header";
 import styles from "./WrapperPage.module.scss";
@@ -66,6 +67,7 @@ const WrapperPage = () => {
       <div className={`${styles.wrapper} backdrop-blur-lg`}>
         <Header/>
       </div>
+      <Outlet/>
     </>
   );
 };

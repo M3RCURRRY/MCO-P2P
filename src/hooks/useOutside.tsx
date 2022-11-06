@@ -1,11 +1,15 @@
 import { useEffect } from "react";
 
-function useOtside(ref: React.RefObject<HTMLElement>) {
+function useOtside ( ref: React.RefObject<HTMLElement>, callback: () => void) {
   useEffect(() => {
 
     const clickHandler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
+        callback?.();
         console.log("Clicked outside");
+      }
+      else {
+        console.log("Clicked inside");
       }
     }
 
