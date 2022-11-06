@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Header from "../../layout/Header/Header";
 import styles from "./WrapperPage.module.scss";
 
-interface FigureProps {
+interface IFigureProps {
   color: string;
   degree: number;
   size: number;
@@ -12,7 +12,7 @@ interface FigureProps {
   fromBottom?: number;
 }
 
-const Rectangle = styled.div<FigureProps>`
+const Rectangle = styled.div<IFigureProps>`
   position: absolute;
   background-color: ${(props) => props.color};
   transform: rotate(${(props) => props.degree}deg);
@@ -27,7 +27,7 @@ const Rectangle = styled.div<FigureProps>`
   box-shadow: 0px 0px 33px 13px rgba(0, 0, 0, 0.2);
 `;
 
-const Circle = styled.div<FigureProps>`
+const Circle = styled.div<IFigureProps>`
   position: absolute;
   background-color: ${(props) => props.color};
   transform: rotate(${(props) => props.degree}deg);
