@@ -66,8 +66,8 @@ const WrapperPage = () => {
       </div>
       <div className={`${styles.wrapper} backdrop-blur-lg`}>
         <Header/>
+        <Outlet/>
       </div>
-      <Outlet/>
     </>
   );
 };

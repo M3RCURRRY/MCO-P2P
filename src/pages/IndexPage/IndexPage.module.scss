@@ -1,0 +1,46 @@
+.shadow {
+  text-shadow: 0px 0px 15px #E11D48;
+}
+
+.headerFont {
+  line-height: 100%;
+  font-family: RussoOne, sans-serif;
+}
+
+.plainFont {
+  font-family: monospace;
+  text-align: justify;
+}
+
+.headerIcon {
+  animation: anim-shadow 1s linear infinite;
+}
+
+.statsBg {
+  background-color: #18191d;
+  background: linear-gradient(180deg, 
+    rgba(24,25,29,1) 0%, 
+    rgba(24,25,29,0.8) 75%, 
+    rgba(24,25,29,0.45) 100%);
+}
+
+.square {
+  width: 20%;
+  padding-bottom: 20%;
+  height: 0;
+}
+
+@keyframes anim-shadow {
+  0% {
+    -webkit-filter: drop-shadow(0px 0px 7px rgba(225, 29, 72, 0.7));
+    filter: drop-shadow(0px 0px 7px rgba(225, 29, 72, 0.7));
+  }
+  50% {
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(225, 29, 72, 0.7));
+    filter: drop-shadow(0px 0px 10px rgba(225, 29, 72, 0.7));
+  }
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 7px rgba(225, 29, 72, 0.7));
+    filter: drop-shadow(0px 0px 7px rgba(225, 29, 72, 0.7));
+  }
+}

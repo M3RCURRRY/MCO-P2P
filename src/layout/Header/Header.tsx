@@ -121,7 +121,7 @@ function Header() {
   };
 
   return (
-    <header className="container mx-auto flex flex-row items-center justify-around">
+    <header className="container mx-auto flex flex-row items-center justify-between">
       <img src={logo} className="h-20"></img>
       <div ref={inputRef} className="relative flex flex-row justify-around">
         <input

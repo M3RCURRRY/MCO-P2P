@@ -9,7 +9,8 @@
   background-color: rgba(33, 36, 41, .925);
   margin: 0px 50px;
   max-width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 
