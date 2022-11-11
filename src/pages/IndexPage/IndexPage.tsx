@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 
 import styles from "./IndexPage.module.scss";
-import guide from "./../../assets/guide.png";
 import Button from "../../components/Button/Button";
 import Tile from "../../components/Tile/Tile";
+
+import guide from "./../../assets/guide.png";
+import botania from "./../../assets/botania.png";
+import { userData } from "./../../utils/mockdata";
 
 const IndexPage = () => {
   const [activeTile, setActiveTile] = useState<number>(0);
@@ -36,35 +39,92 @@ const IndexPage = () => {
           <img src={guide} alt="Guide icon" className="max-w-xl"></img>
         </div>
       </div>
-      <div className="container mx-auto grid grid-cols-5 gap-4 w-full">
+      <section className="container mx-auto grid grid-cols-5 gap-4 w-full">
         <section
-          className={`${styles.statsBg} row-start-2 col-start-1 col-end-6 grid-rows-2 h-fit rounded-2xl flex flex-col`}
+          className={`${styles.statsBg} row-start-1 col-start-1 col-end-6 grid-rows-2 h-fit rounded-2xl flex flex-col`}
         >
           <h2 className="text-center my-5 text-rose-600 font-semibold text-4xl">
             Current statistics
           </h2>
           <div className="flex flex-row">
-            <Tile hasShadow={true} width={"w-1/3"} data="15 guides">
+            <Tile width={"w-1/3"} data="15 guides">
               Guides
             </Tile>
-            <Tile hasShadow={true} width={"w-1/3"} data="4 authors">
+            <Tile width={"w-1/3"} data="4 authors">
               Authors
             </Tile>
-            <Tile hasShadow={true} width={"w-1/3"} data="10 mods">
+            <Tile width={"w-1/3"} data="10 mods">
               Captured mods
             </Tile>
           </div>
         </section>
-        <section className="row-start-3 col-start-2 col-end-5 flex flex-col">
-          <h2 className="text-center my-5 text-white font-semibold text-4xl">Maintained mods</h2>
+        <div className="row-start-2 col-start-2 col-end-5 flex flex-col">
+          <h2 className="text-center my-5 text-white font-semibold text-4xl">
+            Maintained mods
+          </h2>
           <div className="flex flex-row">
-            <Tile isSquare={true}></Tile>
-            <Tile isSquare={true}></Tile>
-            <Tile isSquare={true}></Tile>
-            <Tile isSquare={true}></Tile>
+            <Tile
+              isSquare={true}
+              hasShadow={true}
+              hasHover={true}
+              icon={botania}
+            >
+              <span className="text-xl font-normal">Botania</span>
+            </Tile>
+            <Tile
+              isSquare={true}
+              hasShadow={true}
+              hasHover={true}
+              icon={botania}
+            >
+              <span className="text-xl font-normal">Thaumcraft</span>
+            </Tile>
+            <Tile
+              isSquare={true}
+              hasShadow={true}
+              hasHover={true}
+              icon={botania}
+            >
+              <span className="text-xl font-normal">Tinker's Construct</span>
+            </Tile>
+            <Tile
+              isSquare={true}
+              hasShadow={true}
+              hasHover={true}
+              icon={botania}
+            >
+              <span className="text-xl font-normal">DivineRPG</span>
+            </Tile>
           </div>
-        </section>
-      </div>
+        </div>
+        <div className="row-start-3 col-start-2 col-end-5 flex flex-row">
+          <Tile isSquare={true} hasShadow={true} hasHover={true} icon={botania}>
+            <span className="text-xl font-normal">Erebus</span>
+          </Tile>
+          <Tile isSquare={true} hasShadow={true} hasHover={true} icon={botania}>
+            <span className="text-xl font-normal">Twilight Forest</span>
+          </Tile>
+          <Tile isSquare={true} hasShadow={true} hasHover={true} icon={botania}>
+            <span className="text-xl font-normal">Magical Network</span>
+          </Tile>
+          <Tile isSquare={true} hasShadow={true} hasHover={true} icon={botania}>
+            <span className="text-xl font-normal">Alfheim</span>
+          </Tile>
+        </div>
+        <div className="row-start-4 col-start-1 col-end-6 w-full h-2 rounded-full bg-[#18191d] my-10"></div>
+      </section>
+      <section className="container flex flex-col w-full">
+        <h2 className="">
+
+        </h2>
+        <div className="w-full">
+          {
+            userData.map((item, index) => {
+              return <div>{item.username}</div>
+            })
+          }
+        </div>
+      </section>
     </>
   );
 };
