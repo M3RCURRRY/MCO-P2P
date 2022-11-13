@@ -7,6 +7,7 @@ import Tile from "../../components/Tile/Tile";
 import guide from "./../../assets/guide.png";
 import botania from "./../../assets/botania.png";
 import { userData } from "./../../utils/mockdata";
+import Card from "../../components/Card/Card";
 
 const IndexPage = () => {
   const [activeTile, setActiveTile] = useState<number>(0);
@@ -113,14 +114,14 @@ const IndexPage = () => {
         </div>
         <div className="row-start-4 col-start-1 col-end-6 w-full h-2 rounded-full bg-[#18191d] my-10"></div>
       </section>
-      <section className="container flex flex-col w-full">
+      <section className="container flex flex-col w-full mx-auto">
         <h2 className="">
-
+          123
         </h2>
-        <div className="w-full">
+        <div className="flex flex-row align-middle justify-between">
           {
             userData.map((item, index) => {
-              return <div>{item.username}</div>
+              return <Card width="w-1/4" userdata={item} img={guide}/>
             })
           }
         </div>
